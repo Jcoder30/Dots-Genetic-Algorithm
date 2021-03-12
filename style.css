@@ -1,0 +1,74 @@
+html {
+  min-height: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+
+  background: url('../img/bg_dna.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#playground_wrapper {
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 504px;
+  height: 504px;
+  padding: 10px;
+
+  background: white;
+}
+
+#playground {
+  position: relative;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  border: 2px solid rgb(220, 220, 220);
+
+  width: 500px;
+  height: 500px;
+
+  background: rgb(250, 250, 250);
+}
+
+.bx_dot {
+  display: block;
+  position: absolute;
+
+  border-radius: 50%;
+}
+
+.bx_dot[data-bx_type='player'] {
+  width: 10px;
+  height: 10px;
+  background-color: black;
+}
+
+.bx_dot[data-bx_type='player-best'] {
+  width: 10px;
+  height: 10px;
+  background-color: green;
+  z-index: 100;
+}
+
+.bx_dot[data-bx_type='goal'] {
+  width: 10px;
+  height: 10px;
+  background-color: red;
+}
+
+.bx_rect {
+  display: block;
+  position: absolute;
+}
+
+.bx_rect[data-bx_type='obstacle'] {
+  background-color: darkgrey;
+}
