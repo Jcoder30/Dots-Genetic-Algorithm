@@ -53,7 +53,40 @@ class Bx_Population {
    * It chooses randomly (even the worst parent can have a child),
    * but the chance of being chosen (even multiple times) is relative to the relative fitness
    */
+
+  finishedAndDeathCounter() {
+    var totalDeaths = 0;
+    var totalFinished = 0;
+    var numGen = this.generation;
+    for (let player = 0; player < this.game.data.population_size; player++) {
+      if (this.population[player].dead) {
+        totalDeaths++;
+      } else if (this.population[player].finished) {
+        totalFinished++;
+      }
+    }
+    numDeaths.innerText =
+      'Reached Goal: ' +
+      totalFinished +
+      ' out of ' +
+      this.game.data.population_size +
+      ' dots';
+    numFinished.innerText =
+      'Deaths: ' +
+      totalDeaths +
+      ' out of ' +
+      this.game.data.population_size +
+      ' dots';
+    genCounter.innerText = this.generation;
+
+    var deaths2 = 'deaths' + numGen; // fix over here lots of bugs with displaying data in table.
+    var finished2 = 'finished' + numGen;
+    document.getElementById(deaths2).innerHTML = totalDeaths;
+    document.getElementById(finished2).innerHTML = totalFinished;
+  }
+
   newGeneration() {
+    this.finishedAndDeathCounter();
     var totalFitness = 0;
     var randomPoints = [];
 

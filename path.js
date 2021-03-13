@@ -9,7 +9,7 @@ class Bx_playerBrain {
    * @todo Change to the game parameter
    */
   static get MUTATION_RATE() {
-    return 0.01;
+    return 0.05;
   }
 
   /**

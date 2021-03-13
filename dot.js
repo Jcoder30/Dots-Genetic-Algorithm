@@ -108,7 +108,20 @@ class Bx_Player {
    * @param {int} step The number of steps taken
    */
   render(step) {
+    let bestStep = this.finished - this.game.data.step_size;
     Bx_Render.renderPlayer(this, step);
+    if (this.best && this.finished) {
+      bestPath.innerText = 'Best path to goal: ' + +bestStep + ' Steps';
+
+      gen = game.population.generation;
+      var gen = document.getElementById('genCounter').innerText;
+      var bestPath2 = 'best_path' + gen;
+      document.getElementById(bestPath2).innerHTML = bestStep;
+    } else if (this.best) {
+      var gen = document.getElementById('genCounter').innerText;
+      var bestPath2 = 'best_path' + gen;
+      document.getElementById(bestPath2).innerHTML = 'n/a';
+    }
   }
 
   /**
