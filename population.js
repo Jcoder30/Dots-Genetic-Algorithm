@@ -57,7 +57,7 @@ class Bx_Population {
   finishedAndDeathCounter() {
     var totalDeaths = 0;
     var totalFinished = 0;
-    var numGen = this.generation;
+    var numGen = this.generation % 10;
     for (let player = 0; player < this.game.data.population_size; player++) {
       if (this.population[player].dead) {
         totalDeaths++;
@@ -125,5 +125,7 @@ class Bx_Population {
     }
     this.population = players;
     this.generation += 1;
+    gen = 'gen' + (this.generation % 10);
+    document.GetElementById().innerHTML = this.generation;
   }
 }
