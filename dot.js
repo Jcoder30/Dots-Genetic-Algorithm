@@ -113,7 +113,7 @@ class Bx_Player {
     if (this.best && this.finished) {
       bestPath.innerText = 'Best path to goal: ' + +bestStep + ' Steps';
 
-      gen = game.population.generation;
+      gen = game.population.generation % 10;
       var gen = document.getElementById('genCounter').innerText;
       var bestPath2 = 'best_path' + gen;
       document.getElementById(bestPath2).innerHTML = bestStep;
